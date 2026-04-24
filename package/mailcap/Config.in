@@ -1,0 +1,8 @@
+config BR2_PACKAGE_MAILCAP
+	bool "mailcap"
+	help
+	  Helper application and MIME type associations for file types.
+	  Provides /etc/mailcap and /etc/mime.types files for handling
+	  MIME type mappings and mail capabilities.
+
+	  https://pagure.io/mailcap

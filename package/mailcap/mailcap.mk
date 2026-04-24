@@ -1,0 +1,16 @@
+MAILCAP_VERSION = r2-1-53
+MAILCAP_SITE = https://pagure.io/mailcap.git
+MAILCAP_SITE_METHOD = git
+MAILCAP_GIT_SUBMODULES = YES
+MAILCAP_LICENSE = MIT
+MAILCAP_LICENSE_FILES = COPYING
+
+define MAILCAP_BUILD_CMDS
+	$(MAKE) -C $(@D)
+endef
+
+define MAILCAP_INSTALL_TARGET_CMDS
+	$(MAKE) -C $(@D) DESTDIR=$(TARGET_DIR) install
+endef
+
+$(eval $(generic-package))
