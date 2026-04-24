@@ -1,3 +1,5 @@
+Fork of buildroot set up to build Phantom Satellite
+
 Buildroot is a simple, efficient and easy-to-use tool to generate embedded
 Linux systems through cross-compilation.
 
