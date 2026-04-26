@@ -1,4 +1,8 @@
-Fork of buildroot set up to build Phantom Satellite
+Fork of buildroot set up to build Phantom Satellite (and probably other UXP based browsers, as long as they can build with python 3)
+
+i686 (PS-i686_defconfig) and aarch64/ARM64 (PS-ARM64_defconfig) have been tested and confirmed to work
+
+TODO: Clean up buildroot configs and build dependencies, test other architectures and create build configs for them.
 
 Buildroot is a simple, efficient and easy-to-use tool to generate embedded
 Linux systems through cross-compilation.
