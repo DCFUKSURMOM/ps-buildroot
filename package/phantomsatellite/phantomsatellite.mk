@@ -57,7 +57,7 @@ ifeq ($(BR2_powerpc64),y)
     PS_CFLAGS += "-mcpu=powerpc64 -mtune=powerpc64 -maltivec -mabi=altivec -mno-crypto"
 endif
 ifeq ($(BR2_aarch64),y)
-#Don't pass any FLAGS for aarch64 yet
+# Optimize for generic aarch64
     PS_CFLAGS += "-march=armv8-a -mtune=generic"
 endif
 
