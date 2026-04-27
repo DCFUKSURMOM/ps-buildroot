@@ -7,12 +7,17 @@
 PHANTOMSATELLITE_VERSION = 4f14e35e381f12d34b602959d93bc6981a25673c
 PHANTOMSATELLITE_SITE = https://github.com/DCFUKSURMOM/Phantom-Satellite.git
 PHANTOMSATELLITE_SITE_METHOD = git
-PHANTOMSATELLITE_DEPENDENCIES = alsa-lib xlib_libXt pulseaudio openssl sqlite zlib bzip2 libjpeg libgtk2 libpng freetype fontconfig mesa3d host-python3 dbus-glib
+PHANTOMSATELLITE_DEPENDENCIES = libgtk2 dbus-glib xlib_libXt mailcap alsa-lib unzip zip pulseaudio openssl host-python3 xz
 PHANTOMSATELLITE_POST_EXTRACT_HOOKS += PHANTOMSATELLITE_PREPARE_MOZCONFIG
+
+ifeq ($(BR2_i386)$(BR2_x86_64),y)
+    PHANTOMSATELLITE_DEPENDENCIES += host-yasm
+endif
 
 define PHANTOMSATELLITE_PREPARE_MOZCONFIG
     cp -v $(PHANTOMSATELLITE_PKGDIR)/mozconfig $(@D)/.mozconfig
     echo 'mk_add_options PYTHON=$(HOST_DIR)/bin/python3' >> $(@D)/.mozconfig
+    echo 'mk_add_options YASM=$(HOST_DIR)/bin/yasm' >> $(@D)/.mozconfig
     echo 'ac_add_options --target=$(GNU_TARGET_NAME)' >> $(@D)/.mozconfig
     echo 'ac_add_options --x-libraries=$(TARGET_DIR)/usr/lib' >> $(@D)/.mozconfig
     echo 'ac_add_options --x-includes=$(TARGET_DIR)/usr/include' >> $(@D)/.mozconfig
