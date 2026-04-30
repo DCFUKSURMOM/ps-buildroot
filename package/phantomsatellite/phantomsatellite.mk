@@ -68,6 +68,7 @@ endef
 
 define PHANTOMSATELLITE_INSTALL_TARGET_CMDS
     cd $(@D) && $(TARGET_MAKE_ENV) ./mach package
+    cd $(@D) && cp obj-$(GNU_TARGET_NAME)/dist/*.tar.xz $(BASE_DIR)/images
 endef
 
 $(eval $(generic-package))
