@@ -1,8 +1,40 @@
-Fork of buildroot set up to build Phantom Satellite (and probably other UXP based browsers, as long as they can build with python 3)
+Fork of buildroot set up to cross compile Phantom Satellite (and probably other UXP based browsers, as long as they can build with python 3)
 
-i686 (PS-i686_defconfig) and aarch64/ARM64 (PS-ARM64_defconfig) have been tested and confirmed to work
+Build instructions:
 
-TODO: Clean up buildroot configs and build dependencies, test other architectures and create build configs for them.
+Clone this repo: 
+git clone https://github.com/DCFUKSURMOM/ps-buildroot
+
+CD into the ps-buildroot directory:
+cd ps-buildroot
+
+Chose the config file:
+make PS-xxxx_defconfig (replace xxxx with the architecture you want)
+
+Start the build:
+make -jX (replace X with the number of CPU cores you want to use)
+
+The build will take a while, buildroot isnt just compiling the browser, but any dependencies the browser needs to run.
+
+Once the browser finishes building, it will be packaged into a portable tarball and copied to the images directory (output/images)
+
+Working configs:
+i586-nosse (PS-PMMX_defconfig), special config that disables SSE1 and SSE2 (and enables MMX), requires a Pentium MMX or newer
+i686-nosse2 (PS-i686-nosse2_defconfig), special config that disables SSE2 (and enables SSE1), requires a Pentium 3 or newer
+i686 (PS-i686_defconfig), requires a Pentium 4 or newer
+x86_64 (PS-x64_defconfig), should work on any x86_64 CPU
+aarch64/ARM64 (PS-ARM64_defconfig), should work on any aarch64/ARM64 CPU
+PowerPC (PS-PPC_defconfig), requires a PPC 604e or newer to run, but is optimized for PPC 750 or newer
+PowerPC64 (PS-PPC64_defconfig), should work on any 64 bit PowerPC CPU
+
+Not Working:
+armv7 (no defconfig), fails to build, minimum requirements unknown.
+
+Other architectures are currently untested.
+
+If your host machine is the same architecture as the architecture you want to compile, it will be faster to compile natively, this tool is intended for cross compiling.
+
+Original buildroot readme below:
 
 Buildroot is a simple, efficient and easy-to-use tool to generate embedded
 Linux systems through cross-compilation.
