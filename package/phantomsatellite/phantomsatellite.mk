@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PHANTOMSATELLITE_VERSION = 4f14e35e381f12d34b602959d93bc6981a25673c
+PHANTOMSATELLITE_VERSION = 8364fd4d85f0cafeed05a27a78a903aae5648d25
 PHANTOMSATELLITE_SITE = https://github.com/DCFUKSURMOM/Phantom-Satellite.git
 PHANTOMSATELLITE_SITE_METHOD = git
 PHANTOMSATELLITE_DEPENDENCIES = libgtk2 dbus-glib xlib_libXt mailcap alsa-lib unzip zip pulseaudio openssl host-python3 xz
