@@ -61,7 +61,7 @@ ifeq ($(BR2_aarch64),y)
     PS_CFLAGS += "-march=armv8-a -mtune=generic"
 endif
 ifeq ($(BR2_arm),y)
-# Optimize for generic aarch64
+# Optimize for generic armv7
     PS_CFLAGS += "-march=armv7-a -mtune=generic-armv7-a"
 endif
 
