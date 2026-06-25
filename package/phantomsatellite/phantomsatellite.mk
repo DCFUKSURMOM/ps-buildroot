@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PHANTOMSATELLITE_VERSION = 8364fd4d85f0cafeed05a27a78a903aae5648d25
+PHANTOMSATELLITE_VERSION = b6f1c4c411fdfaa6bce5673a41848504719b8c6b
 PHANTOMSATELLITE_SITE = https://github.com/DCFUKSURMOM/Phantom-Satellite.git
 PHANTOMSATELLITE_SITE_METHOD = git
 PHANTOMSATELLITE_DEPENDENCIES = libgtk2 dbus-glib xlib_libXt mailcap alsa-lib unzip zip pulseaudio openssl host-python3 xz
@@ -59,6 +59,10 @@ endif
 ifeq ($(BR2_aarch64),y)
 # Optimize for generic aarch64
     PS_CFLAGS += "-march=armv8-a -mtune=generic"
+endif
+ifeq ($(BR2_arm),y)
+# Optimize for generic aarch64
+    PS_CFLAGS += "-march=armv7-a -mtune=generic-armv7-a"
 endif
 
 
