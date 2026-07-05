@@ -1,0 +1,15 @@
+config BR2_PACKAGE_POWERFOX
+    bool "powerfox"
+    depends on BR2_PACKAGE_LIBGTK2
+    depends on BR2_PACKAGE_DBUS_GLIB
+    depends on BR2_PACKAGE_XLIB_LIBXT
+    depends on BR2_PACKAGE_MAILCAP
+    depends on BR2_PACKAGE_ALSA_LIB
+    depends on BR2_PACKAGE_UNZIP
+    depends on BR2_PACKAGE_ZIP
+    depends on BR2_PACKAGE_PULSEAUDIO
+    depends on BR2_PACKAGE_OPENSSL
+    depends on BR2_PACKAGE_HOST_PYTHON3
+    depends on BR2_PACKAGE_XZ
+    help
+      A secure, modern, and open-source web browser for Mac OS X 10.6 Snow Leopard, 10.5 Leopard, and 10.4 Tiger for Intel and PowerPC. 
