@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-POWERFOX_VERSION = 588b2579456a06124773fa98a662b8703e060bd2
+POWERFOX_VERSION = bc3ca1cd7e83f21a882121138bf468a96a67f4b6
 POWERFOX_SITE = https://github.com/Jazzzny/powerfox-browser
 POWERFOX_SITE_METHOD = git
 POWERFOX_DEPENDENCIES = libgtk2 dbus-glib xlib_libXt mailcap alsa-lib unzip zip pulseaudio openssl host-python3 xz
