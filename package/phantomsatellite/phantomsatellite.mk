@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PHANTOMSATELLITE_VERSION = b6f1c4c411fdfaa6bce5673a41848504719b8c6b
+PHANTOMSATELLITE_VERSION = 269c08c3c8a241210b47b837caaff0d74527fa15
 PHANTOMSATELLITE_SITE = https://github.com/DCFUKSURMOM/Phantom-Satellite.git
 PHANTOMSATELLITE_SITE_METHOD = git
 PHANTOMSATELLITE_DEPENDENCIES = libgtk2 dbus-glib xlib_libXt mailcap alsa-lib unzip zip pulseaudio openssl host-python3 xz
@@ -67,6 +67,7 @@ endif
 
 
 define PHANTOMSATELLITE_BUILD_CMDS
+    cd $(@D) && git clone https://github.com/DCFUKSURMOM/UXP platform/
     cd $(@D) && $(TARGET_MAKE_ENV) ./mach build
 endef
 
